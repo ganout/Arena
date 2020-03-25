@@ -23,9 +23,9 @@ public class Opponent {
         int elementaryRandom = nbRandom;
 
         if (elementaryRandom == 1) {
-            return "fire";
+            return "feu";
         } else if (elementaryRandom == 2) {
-            return "water";
+            return "eau";
         } else {
             return "air";
         }
@@ -94,37 +94,23 @@ public class Opponent {
     }
 
     public static int elementaryEffect(Opponent attackingMonster, Champion victimMonster) {
-        
-        String elementaryOpponent = attackingMonster.getElementary();
-            String elementaryVictim = victimMonster.getElementary();
 
-            if (elementaryOpponent.equals("fire")) {
-                if (elementaryVictim.equals("fire")) {
-                    return attackingMonster.attack();
-                } else if (elementaryVictim.equals("water")) {
-                    return attackingMonster.attack() / 2 ;
-                } else {
-                    return attackingMonster.attack() * 2 ;
-                }
-            } else if (elementaryOpponent.equals("air")) {
-                if (elementaryVictim.equals("air")) {
-                    return attackingMonster.attack();
-                } else if (elementaryVictim.equals("fire")) {
-                    return attackingMonster.attack() / 2 ;
-                } else {
-                    return attackingMonster.attack() * 2 ;
-                }
-            } else if (elementaryOpponent.equals("water")) {
-                if (elementaryVictim.equals("water")) {
-                    return attackingMonster.attack();
-                } else if (elementaryVictim.equals("air")) {
-                    return attackingMonster.attack() / 2 ;
-                } else {
-                    return attackingMonster.attack() * 2 ;
-                }
-            } else {
-                return 200;
-            }
-    }
-    
+        String elementaryOpponent = attackingMonster.getElementary();
+        String elementaryVictim = victimMonster.getElementary();
+
+        int damage = attackingMonster.attack();
+        if (elementaryOpponent.equals("feu") && elementaryVictim.equals("air")
+                || elementaryOpponent.equals("air") && elementaryVictim.equals("eau")
+                || elementaryOpponent.equals("eau") && elementaryVictim.equals("feu")) {
+            damage *= 2; // damage = damage * 2;
+            return damage;
+        } else if (elementaryOpponent.equals("eau") && elementaryVictim.equals("air")
+            || elementaryOpponent.equals("air") && elementaryVictim.equals("feu")
+            || elementaryOpponent.equals("feu") && elementaryVictim.equals("eau")) {
+            damage /= 2; // damage = damage / 2;
+            return damage;
+        } else {
+            return damage;
+        }
+    } 
 }

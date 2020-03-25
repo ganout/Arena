@@ -13,7 +13,7 @@ public class Arena {
         // Une fois le champion créé, trois adversaires vont successivement le combattre. Chaque adversaire à ses attributs et élément attribués aléatoirement. De plus, ces points de vies sont sélectionnés aléatoirement entre 10 et 30.
 
         //création du champion
-        Champion dracaufeu = new Champion("Dracaufeu", "fire");
+        Champion dracaufeu = new Champion("Dracaufeu", "feu");
 
         //création de trois adversaires
         Opponent roucool = new Opponent("Roucool");
@@ -21,13 +21,13 @@ public class Arena {
         Opponent tortank = new Opponent("Tortank");
 
         System.out.println();
-        System.out.println("Le trio Jessie, James et Miaouss de la team rocket nous attaques !!!!");
+        System.out.println("Le trio Jessie, James et Miaouss de la team rocket nous attaquent !!!!");
         System.out.println();
         System.out.println("appuyez sur entrée pour lancer votre pokéball");
         input.nextLine();        
         System.out.println("Dracaufeu, à toi de jouer !!!");
         System.out.println();
-        System.out.println(dracaufeu.getName() + " qui est de type : " + dracaufeu.getElementary() + ", a une attaque de : " + dracaufeu.getStrength() + ", une intelligence de : " + dracaufeu.getIntelligence() + ", ainsi que " + dracaufeu.getLife() + " de vie.");
+        System.out.println(dracaufeu.getName() + " est de type : " + dracaufeu.getElementary() + ", il a une attaque de : " + dracaufeu.getStrength() + ", une intelligence de : " + dracaufeu.getIntelligence() + ", ainsi que " + dracaufeu.getLife() + " points de vie.");
         System.out.println();
         System.out.println("appuyez sur entrée pour que la team rocket vous montre leurs pokémons");
         input.nextLine();
@@ -42,8 +42,12 @@ public class Arena {
         System.out.println("    | DRACAUFEU VS ROUCOOL |");
         System.out.println("    ------------------------");
         System.out.println();
-        System.out.println(roucool.getName() + " est de type : " + roucool.getElementary() + ", avec une attaque de : " + roucool.getStrength() + ", ainsi que " + roucool.getLife() + " de vie.");
         System.out.println();
+        System.out.println(roucool.getName() + " est de type : " + roucool.getElementary() + ", avec une attaque de : " + roucool.getStrength() + ", ainsi que " + roucool.getLife() + " points de vie.");
+        System.out.println();
+        System.out.println();
+        System.out.println("appuyez sur entrée pour attaquer " + roucool.getName());
+        input.nextLine();
 
         boolean heWant = false;
 
@@ -98,7 +102,7 @@ public class Arena {
         
 
             System.out.println();
-            System.out.println(goupix.getName() + " est de type : " + goupix.getElementary() + ", avec une attaque de : " + goupix.getStrength() + ", ainsi que " + goupix.getLife() + " de vie.");
+            System.out.println(goupix.getName() + " est de type : " + goupix.getElementary() + ", avec une attaque de : " + goupix.getStrength() + ", ainsi que " + goupix.getLife() + " points de vie.");
             System.out.println();
         }
 
@@ -153,7 +157,7 @@ public class Arena {
         
 
             System.out.println();
-            System.out.println(tortank.getName() + " est de type : " + tortank.getElementary() + ", avec une attaque de : " + tortank.getStrength() + ", ainsi que " + tortank.getLife() + " de vie.");
+            System.out.println(tortank.getName() + " est de type : " + tortank.getElementary() + ", avec une attaque de : " + tortank.getStrength() + ", ainsi que " + tortank.getLife() + " points de vie.");
             System.out.println();
         }
     
